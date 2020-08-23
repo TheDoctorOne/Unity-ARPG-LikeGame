@@ -21,6 +21,11 @@ public class SphereOfStaff : MonoBehaviour
             case 1:
                 transform.position = transform.position + transform.up * 5f * Time.deltaTime;
                 break;
+            case 2:
+                if(transform.position.y > 0)
+                    transform.position = transform.position + transform.up * -1 * 5f * Time.deltaTime;
+                //transform.position = transform.position + transform.up * 5f * Time.deltaTime;
+                break;
             default:
                 transform.position = transform.position + transform.forward * 30f * Time.deltaTime;
                 break;

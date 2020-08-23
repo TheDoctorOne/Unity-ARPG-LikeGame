@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4295291882611913057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 334969346}
@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphere: {fileID: 6815180943219979107, guid: 97f1c89a34dbd5844af9d132693818b7, type: 3}
+  sphereCountFirst: 15
+  playerDist: 3
+  heightStart: -1
+  heightDist: 0.01
+  sphereCountSecond: 30
 --- !u!1 &4295291883626353055
 GameObject:
   m_ObjectHideFlags: 0

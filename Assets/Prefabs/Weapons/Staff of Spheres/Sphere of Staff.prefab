@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4402868980079137791}
   - component: {fileID: 8307534955148809831}
   - component: {fileID: 2643392316754781135}
-  - component: {fileID: 3105544166455859933}
   - component: {fileID: 4461675505933018699}
   - component: {fileID: 8122585026801275138}
   - component: {fileID: 8173659351567072888}
+  - component: {fileID: -8329637692200560451}
   m_Layer: 0
   m_Name: Sphere of Staff
   m_TagString: Untagged
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cf6ef7b37e57f34880bddab5dfb5b89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3105544166455859933
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6815180943219979107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4461675505933018699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +126,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcad987fa900064aa7c802566bec010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &-8329637692200560451
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815180943219979107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

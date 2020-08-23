@@ -22,11 +22,10 @@ public class GeneralProjectileCollision : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             Destroy(collision.gameObject.transform.parent.gameObject);
-            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "env")
         {
-            Destroy(gameObject);
+
         }
     }
 }
