@@ -6,27 +6,30 @@ using UnityEngine;
 public class StaffofSpheres : MonoBehaviour
 {
     public GameObject sphere;
+    public GameObject characterBody;
     // Start is called before the first frame update
     void Start()
     {
         latestShoot = Time.time - shootCooldown;
         latestFistSpell = Time.time- fistSpellCd;
         latestSecondSpell = Time.time-secondSpellCd;
+
+        characterBody = GameObject.FindGameObjectWithTag(characterBody.tag);
     }
 
 
     private float latestShoot;
     private float latestFistSpell;
     private float latestSecondSpell;
-    private float shootCooldown = 0.06f;
+    private float shootCooldown = 0.3f;
     private float fistSpellCd = 2f;
-    private float secondSpellCd = 5f;
+    private float secondSpellCd = 4.5f;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(0) && Time.time - latestShoot > shootCooldown) 
         {
-            Instantiate(sphere, this.transform);
+            Instantiate(sphere, transform.position, characterBody.transform.rotation);
             latestShoot = Time.time;
         }
         if (Input.GetKey(KeyCode.Alpha1) && Time.time - latestFistSpell > fistSpellCd)
@@ -115,7 +118,7 @@ public class StaffofSpheres : MonoBehaviour
     {
         isSecondSpellPreparing = true;
 
-        for (int k = 0; k < 2; k++)
+        for (int k = 0; k < 1; k++)
         {
 
             v3Second = new Vector3(current.x, current.y + this.heightStart + (float)k, current.z);
@@ -139,14 +142,14 @@ public class StaffofSpheres : MonoBehaviour
     }
     private void instantiateFirstSpell(Vector3 v3)
     {
-        GameObject go = Instantiate(sphere, v3, transform.rotation);
+        GameObject go = Instantiate(sphere, v3, characterBody.transform.rotation);
 
         go.SendMessage("setMODE", 1);
 
     }
     private void instantiateSecondSpell(Vector3 v3)
     {
-        GameObject go = Instantiate(sphere, v3, transform.rotation);
+        GameObject go = Instantiate(sphere, v3, characterBody.transform.rotation);
 
         go.SendMessage("setMODE", 2);
 
