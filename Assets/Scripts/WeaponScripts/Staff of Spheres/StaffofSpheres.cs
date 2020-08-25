@@ -7,6 +7,7 @@ public class StaffofSpheres : MonoBehaviour
 {
     public GameObject sphere;
     public GameObject characterBody;
+    public Transform sphereLoc;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class StaffofSpheres : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && Time.time - latestShoot > shootCooldown) 
         {
-            Instantiate(sphere, transform.position, characterBody.transform.rotation);
+            Instantiate(sphere, sphereLoc.position, characterBody.transform.rotation);
             latestShoot = Time.time;
         }
         if (Input.GetKey(KeyCode.Alpha1) && Time.time - latestFistSpell > fistSpellCd)
@@ -114,6 +115,7 @@ public class StaffofSpheres : MonoBehaviour
     private List<Vector3> v3ListSecond = new List<Vector3>();
     private bool isSecondSpellReady = false;
     private bool isSecondSpellPreparing = false;
+    private float secondSpellHeight = 1.5f;
     void secondSpell(Vector3 current)
     {
         isSecondSpellPreparing = true;
@@ -121,7 +123,7 @@ public class StaffofSpheres : MonoBehaviour
         for (int k = 0; k < 1; k++)
         {
 
-            v3Second = new Vector3(current.x, current.y + this.heightStart + (float)k, current.z);
+            v3Second = new Vector3(current.x, current.y + this.secondSpellHeight + this.heightStart + (float)k, current.z);
 
             float inc = 2f / sphereCountSecond;
             for (float i = 1f; i < sphereCountSecond; i += inc)

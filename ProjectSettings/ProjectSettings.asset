@@ -649,7 +649,13 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Analytics: 1
+    Build: 0
+    Collab: 1
+    Game Performance: 0
+    Purchasing: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -662,10 +668,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 89c84c12-54fa-4724-a3b8-ee38686b205a
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: BecomeAnyone
+  organizationId: becomeanyone
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8122585026801275138}
   - component: {fileID: 8173659351567072888}
   - component: {fileID: -8329637692200560451}
-  m_Layer: 0
-  m_Name: Sphere of Staff
+  m_Layer: 10
+  m_Name: ProjectileSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTimeInSec: 3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!54 &8122585026801275138
 Rigidbody:
   m_ObjectHideFlags: 0
