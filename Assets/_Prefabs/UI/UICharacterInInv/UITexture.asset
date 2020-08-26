@@ -14,7 +14,7 @@ CustomRenderTexture:
   m_DownscaleFallback: 0
   serializedVersion: 3
   m_Width: 1920
-  m_Height: 1080
+  m_Height: 1920
   m_AntiAliasing: 1
   m_MipCount: -1
   m_DepthFormat: 2
@@ -40,13 +40,13 @@ CustomRenderTexture:
   m_InitMaterial: {fileID: 0}
   m_InitColor: {r: 1, g: 1, b: 1, a: 1}
   m_InitTexture: {fileID: 0}
-  m_UpdateMode: 0
-  m_InitializationMode: 2
+  m_UpdateMode: 1
+  m_InitializationMode: 1
   m_UpdateZoneSpace: 0
   m_CurrentUpdateZoneSpace: 0
   m_UpdateZones: []
-  m_UpdatePeriod: 0
+  m_UpdatePeriod: 0.1
   m_ShaderPass: 0
   m_CubemapFaceMask: 4294967295
   m_DoubleBuffered: 0
-  m_WrapUpdateZones: 0
+  m_WrapUpdateZones: 1
