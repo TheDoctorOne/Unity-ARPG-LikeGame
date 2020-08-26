@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2229199700010727081}
   - component: {fileID: 6692837663584454470}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UICamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

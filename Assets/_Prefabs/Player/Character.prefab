@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2868937278598216531}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: centerPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 9152594284365862015}
   m_Layer: 9
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   speed: 20
+  targetAngle: 0
+  angleCounter: 0
 --- !u!143 &9152594284365862015
 CharacterController:
   m_ObjectHideFlags: 0

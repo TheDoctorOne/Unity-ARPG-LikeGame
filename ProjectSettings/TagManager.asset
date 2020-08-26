@@ -8,6 +8,9 @@ TagManager:
   - env
   - absoluteGround
   - characterBody
+  - Character
+  - WeaponRightHand
+  - WeaponLeftHand
   layers:
   - Default
   - TransparentFX
