@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 2.25, y: 2, z: -0.27}
   m_LocalScale: {x: 0.2, y: 1, z: 0.2}
-  m_Children: []
+  m_Children:
+  - {fileID: 6291239819615428441}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cef64fa32d0c38145be1cde2fe094492, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,3 +131,65 @@ MonoBehaviour:
   angle: 20
   radius: 2.47
   height: 1.5
+--- !u!1001 &5330368387885825517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3576920226014284989}
+    m_Modifications:
+    - target: {fileID: 1584260099385325582, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_Name
+      value: Old_Long_Elvish_Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+--- !u!4 &6291239819615428441 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2213445026613011124, guid: f68bf45fb8146054c84edd89417062b1, type: 3}
+  m_PrefabInstance: {fileID: 5330368387885825517}
+  m_PrefabAsset: {fileID: 0}

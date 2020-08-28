@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 468267451879525833}
   m_Layer: 0
   m_Name: SphereLoc
-  m_TagString: Untagged
+  m_TagString: ProjectileLocation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
