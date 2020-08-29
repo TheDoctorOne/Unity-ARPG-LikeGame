@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class PlayerStats : StatsBase
 {
-    public float PhysicalEnduranceLevel { get; set; }
-    public float MagicalEnduranceLevel { get; set; }
-    public float MagicPowerLevel { get; set; }
-    public float PhysicalPowerLevel { get; set; }
+    public float PhysicalEnduranceLevel { get; set; } = 1;
+    public float MagicalEnduranceLevel { get; set; } = 1;
+    public float MagicPowerLevel { get; set; } = 1;
+    public float PhysicalPowerLevel { get; set; } = 1;
+
 
 
     public float getMagicalAttack()
     {
-        return this.MagicPowerLevel * this.MagicAttack;
+        return getFormula(this.MagicPowerLevel,this.MagicAttack,this.MagicalAttackMultiplier,this.MagicalAttackAddition);
     }
 
     public float getPhysicalAttack()
     {
-        return this.PhysicalPowerLevel * this.PhysicalAttack;
+        return getFormula(this.PhysicalPowerLevel, this.PhysicalAttack, this.PhysicalAttackMultiplier, this.PhysicalAttackAddition);
     }
 
     public float getMagicalDefence()
     {
-        return this.MagicDefence * this.MagicalEnduranceLevel;
+        return getFormula(this.MagicDefence, this.MagicalEnduranceLevel, this.MagicalDefenceMultiplier, this.MagicalDefenceAddition);
     }
     public float getPhysicalDefence()
     {
-        return this.PhysicalDefence * this.PhysicalEnduranceLevel;
+        return getFormula(this.PhysicalDefence, this.PhysicalEnduranceLevel, this.PhysicalDefenceMultiplier, this.PhysicalDefenceAddition);
+    }
+
+    private float getFormula(float PowerLevel, float RawPower, float Multiplier, float Addition)
+    {
+        return PowerLevel * (RawPower + Addition) * Multiplier;
     }
 }

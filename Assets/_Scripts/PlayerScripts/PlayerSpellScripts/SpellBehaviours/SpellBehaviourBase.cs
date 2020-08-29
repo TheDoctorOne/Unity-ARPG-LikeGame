@@ -4,17 +4,28 @@ using UnityEngine;
 
 public abstract class SpellBehaviourBase : MonoBehaviour
 {
+    protected GameObject Character;
+    protected GameObject WeaponRightHand;
+    protected GameObject WeaponLeftHand;
+    protected GameObject CharacterBody;
+    protected PlayerStats stats;
     protected float LifeSpanInSec = -1f;
     protected float CreationTime = 0f;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        Character = GameObject.FindGameObjectWithTag("Character");
+        WeaponRightHand = Utils.FindChildGameObjectByTag(Character, "WeaponRightHand");
+        WeaponLeftHand = Utils.FindChildGameObjectByTag(Character, "WeaponLeftHand");
+        CharacterBody = Utils.FindChildGameObjectByTag(Character, "characterBody");
+        // Get Stats
+        stats = Character.GetComponent<CharacterHandler>().Stats;
         CreationTime = Time.time;
         OnCreate();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         DestroyIfLifeSpan();
         SpellBehaviour();
@@ -23,12 +34,16 @@ public abstract class SpellBehaviourBase : MonoBehaviour
     {
         OnCollision(collision);
     }
-    protected abstract void OnCreate();
-    protected abstract void SpellBehaviour();
-    protected abstract void OnCollision(Collision collision);
+    private void OnDestroy()
+    {
+        BeforeDestroy();
+    }
     private void DestroyIfLifeSpan()
     {
-        if(CreationTime + LifeSpanInSec < Time.time)
+        if (LifeSpanInSec == -1)
+            return;
+
+        if (CreationTime + LifeSpanInSec < Time.time)
         {
             if (this.transform.parent != null)
                 Destroy(this.gameObject.transform.parent.gameObject);
@@ -36,4 +51,15 @@ public abstract class SpellBehaviourBase : MonoBehaviour
                 Destroy(this.gameObject);
         }
     }
+
+    protected abstract void OnCreate();
+    protected abstract void SpellBehaviour();
+    protected abstract void OnCollision(Collision collision);
+    
+    protected virtual void BeforeDestroy()
+    {
+
+    }
+
+
 }

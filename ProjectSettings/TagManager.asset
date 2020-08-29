@@ -12,6 +12,7 @@ TagManager:
   - WeaponRightHand
   - WeaponLeftHand
   - ProjectileLocation
+  - CharacterPrefab
   layers:
   - Default
   - TransparentFX

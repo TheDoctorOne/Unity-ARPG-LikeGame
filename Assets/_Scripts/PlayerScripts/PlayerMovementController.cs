@@ -6,36 +6,6 @@ using System.Runtime.InteropServices;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    public struct POINT
-    {
-        public int X;
-        public int Y;
-
-        public static implicit operator int[](POINT point)
-        {
-            int[] i = new int[2];
-            i[0] = point.X;
-            i[1] = point.Y;
-            return i;
-        }
-    }
-    public static int[] GetCursorPosition()
-    {
-        POINT lpPoint;
-        GetCursorPos(out lpPoint);
-
-        return lpPoint;
-    }
-    [DllImport("user32.dll")]
-    static extern bool SetCursorPos(int X, int Y);
-    [DllImport("user32.dll")]
-    static extern bool GetCursorPos(out POINT lpPoint);
-
-
-
-     /// <summary>
-     /// Variables
-     /// </summary>
     public CharacterController controller;
     public Transform body;
     public Transform charCamera;
@@ -45,6 +15,11 @@ public class PlayerMovementController : MonoBehaviour
     public RuntimeAnimatorController bodyWalk;
     public RuntimeAnimatorController bodyWalkBackwards;
     public RuntimeAnimatorController bodyJump;
+
+    public RuntimeAnimatorController WhirlwindAnimation;
+
+    private float angle = 0;
+
 
     public float jumpHeight = 1f;
 
@@ -85,7 +60,9 @@ public class PlayerMovementController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         /*if (Input.GetMouseButton(1))
             z = 0.8f;*/
-        if(!isGrounded)
+        if (GameGlobals.CurrentSpell == GameGlobals.Spells.Whirlwind)
+            bodyAnimator.runtimeAnimatorController = WhirlwindAnimation;
+        else if (!isGrounded)
             bodyAnimator.runtimeAnimatorController = bodyJump;
         else if (x > 0 || z > 0)
             bodyAnimator.runtimeAnimatorController = bodyWalk;
@@ -93,31 +70,40 @@ public class PlayerMovementController : MonoBehaviour
             bodyAnimator.runtimeAnimatorController = bodyWalkBackwards;
         else
             bodyAnimator.runtimeAnimatorController = bodyIdle;
+
         Vector3 move = body.transform.right * x + body.transform.forward * z;
-
         Vector3 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(body.position);
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
+
+        angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        turnCharacter(angle);
+    }
 
 
-        if (targetAngle  != angleCounter)
+    private void turnCharacter(float angle)
+    {
+
+        if (targetAngle != angleCounter)
         {
             angleCounter += (targetAngle - angleCounter) / 2f;
             transform.rotation = Quaternion.AngleAxis(angleCounter, -Vector3.up);
             body.localRotation = Quaternion.AngleAxis(angle + 270f, -Vector3.up);
 
-        } 
-        controller.Move(move * speed * Time.deltaTime);
-        controller.Move(velocity * Time.deltaTime);
+        }
+
         if (Input.GetMouseButton(2))
         {
 
             targetAngle += Input.GetAxis("Mouse X") * Time.deltaTime * 600f;
-            SetCursorPos((int)mPos.x, (int)mPos.y);
+            Utils.SetCursorPos((int)mPos.x, (int)mPos.y);
         }
         else
         {
-            mPos.x = (float)GetCursorPosition()[0];
-            mPos.y = (float)GetCursorPosition()[1];
+            mPos.x = (float)Utils.GetCursorPosition()[0];
+            mPos.y = (float)Utils.GetCursorPosition()[1];
             body.localRotation = Quaternion.AngleAxis(angle + 270f, -Vector3.up);
         }
     }

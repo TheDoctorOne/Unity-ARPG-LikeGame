@@ -2,17 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WhirlwindSpell : MonoBehaviour
+public class WhirlwindSpell : SpellBase
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject spellPrefab2;
+    private GameObject generated = null;
+    private GameObject generated2 = null;
+    public override void FrameUpdate()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void KeyDown() //Update
     {
-        
+        if (generated == null)
+        {
+            generated = Instantiate(spellPrefab, CharacterBody.transform);
+            GameGlobals.CurrentSpell = GameGlobals.Spells.Whirlwind;
+        }
+        if (generated2 == null)
+        {
+            generated2 = Instantiate(spellPrefab2, CharacterBody.transform);
+            GameGlobals.CurrentSpell = GameGlobals.Spells.Whirlwind;
+        }
+
+    }
+
+    public override void KeyIsNotDown()
+    {
+        base.KeyIsNotDown();
+
+        if (generated != null)
+        {
+            Destroy(generated);
+            generated = null;
+            GameGlobals.CurrentSpell = GameGlobals.Spells.None;
+        }
+        if (generated2 != null)
+        {
+            Destroy(generated2);
+            generated2 = null;
+            GameGlobals.CurrentSpell = GameGlobals.Spells.None;
+        }
+    }
+
+    protected override void OnCreate()
+    {
+        hotkey = KeyCode.Mouse1;
+        skillType = SkillType.UseKeyHold;
+        skillName = "Whirly Wind";
     }
 }

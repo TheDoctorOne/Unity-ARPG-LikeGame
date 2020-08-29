@@ -9,7 +9,6 @@ public class SphereOfStaff : MonoBehaviour
     public float destroyTimeInSec = 0.1f;
     private int MODE = 0;
     private bool once = false;
-    private float secondSpellSpeed = 5f;
     public LayerMask groundLayer;
     // Start is called before the first frame update
     void Start()
@@ -53,12 +52,4 @@ public class SphereOfStaff : MonoBehaviour
         this.MODE = newMode;
     }
 
-    //Detect collisions between the GameObjects with Colliders attached
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.layer == 8)
-        {
-            secondSpellSpeed = 0f;
-        }
-    }
 }

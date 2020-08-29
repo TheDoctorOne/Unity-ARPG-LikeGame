@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicProjectileSpell : SkillBase
+public class BasicProjectileSpell : SpellBase
 {
     public Transform projectileLoc;
 
-    public override void skillCreate()
+    public override void FrameUpdate()
+    {
+
+    }
+
+    public override void KeyDown()
     {
         GameObject projectileObj = null;
         if (projectileLoc == null)
@@ -24,7 +29,7 @@ public class BasicProjectileSpell : SkillBase
 
         if (projectileObj != null)
         {
-            Instantiate(this.spellPrefab, projectileObj.transform.position, transform.parent.localRotation);
+            Instantiate(this.spellPrefab, projectileObj.transform.position, CharacterBody.transform.rotation);
         }
         else
         {

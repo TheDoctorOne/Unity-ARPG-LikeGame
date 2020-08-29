@@ -69,9 +69,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3152902223755825592}
+  - component: {fileID: 7249408827157270368}
   - component: {fileID: 3152902223755825593}
   - component: {fileID: 9152594284365862015}
   - component: {fileID: 2096017108749024162}
+  - component: {fileID: 1365063565374936706}
+  - component: {fileID: 5366785453180742387}
   m_Layer: 9
   m_Name: Character
   m_TagString: Character
@@ -98,6 +101,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7249408827157270368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152902223755825594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dd752597d2a134d8650d348005fb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3152902223755825593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +133,7 @@ MonoBehaviour:
   bodyWalk: {fileID: 9100000, guid: eb79e3fd0dd669f40a90a984b92a0ccf, type: 2}
   bodyWalkBackwards: {fileID: 9100000, guid: b685c37357fd51347943d79847b19701, type: 2}
   bodyJump: {fileID: 9100000, guid: 54ff599963ec97843ad4d4ddeeb61810, type: 2}
+  WhirlwindAnimation: {fileID: 9100000, guid: ca00ab4a0e7cd614b8db54dd563ea690, type: 2}
   jumpHeight: 4
   isGrounded: 0
   groundCheck: {fileID: 3988876877225981052}
@@ -160,6 +176,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 6815180943219979107, guid: 97f1c89a34dbd5844af9d132693818b7, type: 3}
   projectileLoc: {fileID: 0}
+--- !u!114 &1365063565374936706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152902223755825594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233a0814b76d2394681fd1790ac356ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 4065057727191559971, guid: 2225c77f664b59244b2d22d067fb5a3c, type: 3}
+--- !u!114 &5366785453180742387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152902223755825594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc335d286f353b4cb8e767a3954aa49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 8544546612243859830, guid: 71262deaadc66b642abe34b40db52c37, type: 3}
+  spellPrefab2: {fileID: 7571933482420893887, guid: fd483e5e9c380e440944091beffb4b9a, type: 3}
 --- !u!1 &3152902223909396803
 GameObject:
   m_ObjectHideFlags: 0

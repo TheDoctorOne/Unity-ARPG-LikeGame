@@ -30,8 +30,35 @@ public class CharacterWeaponUpdate : MonoBehaviour
                 break;
             }
         }
-        
-        
+    }
+
+
+    private void AssignWeapon(GameObject orgHand, GameObject uiHand)
+    {
+        if (orgHand.transform.childCount > 0)
+        {
+            GameObject inst;
+            Transform transformOrj = orgHand.transform.GetChild(0);
+
+            if (uiHand.transform.childCount < 1)
+            {
+                inst = Instantiate(transformOrj.gameObject, uiHand.transform);
+                inst.layer = this.gameObject.layer;
+                setLayers(inst);
+            }
+            else
+            {
+                Transform transformUI = uiHand.transform.GetChild(0);
+                if (transformOrj.gameObject == transformUI.gameObject)
+                {
+                    Destroy(transformUI.gameObject);
+                    inst = Instantiate(transformOrj.gameObject, uiHand.transform);
+                    inst.layer = this.gameObject.layer;
+                    setLayers(inst);
+                }
+            }
+
+        }
     }
 
     // Update is called once per frame
@@ -40,7 +67,7 @@ public class CharacterWeaponUpdate : MonoBehaviour
         /*
          * If there is no weapon defined, just add the new one
          * If there is a weapon on the hand, remove it and add new one
-         */
+         *//*
         if (orgCharacterUIRightHand.transform.childCount > 0)
         {
             GameObject inst;
@@ -64,12 +91,9 @@ public class CharacterWeaponUpdate : MonoBehaviour
                 }
             }
 
-        }
-
-        if (orgCharacterUILeftHand.transform.childCount > 0)
-        {
-            Instantiate(orgCharacterUILeftHand.transform.GetChild(0), UIWeaponLeftHand.transform);
-        }
+        }*/
+        AssignWeapon(orgCharacterUIRightHand, UIWeaponRightHand);
+        AssignWeapon(orgCharacterUILeftHand, UIWeaponLeftHand);
     }
 
 

@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaMagicDamage : SkillBase
+public class AreaMagicDamage : SpellBase
 {
-
-    public override void skillCreate()
+    public override void FrameUpdate()
     {
-        Instantiate(spellPrefab, transform.position, transform.rotation);
+
+    }
+
+    public override void KeyDown()
+    {
+        Instantiate(spellPrefab, transform.position + new Vector3(0f,0.5f,0f), transform.rotation);
     }
 
     protected override void OnCreate()
